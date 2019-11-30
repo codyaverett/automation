@@ -1,0 +1,28 @@
+---
+
+- name: Ensure directory is present
+  file:
+    path: /home/{{ ansible_user_id }}/.nvm
+    state: directory
+    mode: '0755'
+
+- name: Fetch nvm install script 
+  get_url:
+    url: https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh 
+    dest: /home/{{ ansible_user_id }}/.nvm/install.sh
+    mode: '0755' 
+  
+- name: Install the NVM toolchain
+  shell: /home/{{ ansible_user_id }}/.nvm/install.sh 
+
+- name: Set permissions for nvm.sh
+  file:
+    path: /home/{{ ansible_user_id }}/.nvm/nvm.sh
+    mode: '0755'
+    
+- name: Install node version %
+  shell: ~/.nvm/nvm.sh install 12.15.0
+
+- name: Set default NodeJS version to %
+  shell: ~/.nvm/nvm.sh alias default 12.15.0
+
