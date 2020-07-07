@@ -1,7 +1,10 @@
 
 - hosts: 127.0.0.1
   connection: local
- 
-  roles:
-    - development
- 
+  
+  tasks:
+  - name: wow
+    my_mod:
+      name: moduley
+      new: true
+              
