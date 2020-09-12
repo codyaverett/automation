@@ -1,0 +1,13 @@
+---
+
+- hosts: 127.0.0.1
+  connection: local
+  
+  tasks:
+  - name: install podman
+    script: |
+      . /etc/os-release
+      echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_${VERSION_ID}/ /" | sudo tee /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list
+      curl -L https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_${VERSION_ID}/Release.key | sudo apt-key add -
+      apt-get update -qq
+      apt-get -qq -y install podman

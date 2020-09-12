@@ -6,5 +6,5 @@
   - name: wow
     my_mod:
       name: moduley
-      new: true
+      new: false 
               

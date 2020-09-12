@@ -1,0 +1,6 @@
+
+
+flows:
+
+  default:
+    - log: This is a log
