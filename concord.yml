@@ -6,25 +6,25 @@ configuration:
 flows:
 
   default:
-    - task: git
-      in:
-        action: clone
-        url: git@github.com:codyaverett/automation.git
-        workingDir: repo
-        privateKey:
-          org: Default
-          secretName: automation_github_deploy_key
-        baseBranch: master
-        out: response
-        ignoreErrors: true
+  - task: git
+    in:
+      action: clone
+      url: git@github.com:codyaverett/automation.git
+      workingDir: repo
+      privateKey:
+        org: Default
+        secretName: automation_github_deploy_key
+      baseBranch: master
+      out: response
+      ignoreErrors: true
 
-    - if: "${!response.ok}"
-      then:
-      - log: "Clone action failed: ${response.error}"
+  - if: "${!response.ok}"
+    then:
+    - log: "Clone action failed: ${response.error}"
 
   ######
 
-    - task: ansible
+  - task: ansible
     in:
       playbook: playbook/hello.yml
       inventory:
@@ -38,24 +38,24 @@ flows:
 
   ######
 
-    - task: git
-      in:
-        action: "commit"
-        url: git@github.com:codyaverett/automation.git
-        workingDir: repo
-        privateKey:
-          org: Default
-          secretName: automation_github_deploy_key
-        baseBranch: master
-        commitMessage: "my commit message"
-        commitUsername: "concord"
-        commitEmail: "concord@no-reply.com"
-        pushChanges: true
-        out: "response"
+  - task: git
+    in:
+      action: "commit"
+      url: git@github.com:codyaverett/automation.git
+      workingDir: repo
+      privateKey:
+        org: Default
+        secretName: automation_github_deploy_key
+      baseBranch: master
+      commitMessage: "my commit message"
+      commitUsername: "concord"
+      commitEmail: "concord@no-reply.com"
+      pushChanges: true
+      out: "response"
 
-    - if: "${response.ok}"
-      then:
-      - log: "Commit action completed successfully."
-      - log: "My changeList: ${response.changeList}."
+  - if: "${response.ok}"
+    then:
+    - log: "Commit action completed successfully."
+    - log: "My changeList: ${response.changeList}."
 
 
