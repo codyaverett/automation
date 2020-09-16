@@ -20,4 +20,5 @@
           - op: add
             path: "/{{ projectName }}/versions/-"
             value: "{{ version }}"
+            pretty: yes
       when: projectExists.failed is false
