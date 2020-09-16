@@ -20,4 +20,4 @@
           - op: add
             path: "/{{ projectName }}/versions/-"
             value: "{{ version }}"
-      when: projectExists.msg.failed = false
+      when: {% if projectExists.msg.failed = false %} True {% else %} False {% endif %}
