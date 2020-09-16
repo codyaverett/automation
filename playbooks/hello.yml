@@ -18,6 +18,7 @@
       mode: u+rw,g-wx,o-rwx
     
   - shell: "ls -la > repo/whut.txt"
+  - shell: "cat repo/whut.txt"
     register: myVar
 
   
