@@ -13,15 +13,13 @@
       
   - stat:
       path: ../repo/new.json
-    register: p
+    register: projectFile
   
   - debug:
       msg: "{{ p }}"
-    
-  - debug:
-      msg: "Path exists and is a directory"
-    when: p.stat.isdir is defined and p.stat.isdir
-
+      
+  - shell: "echo "{}" > ../repo/new.json"
+    when: projectFile.stat.exists is false
   
   - name: Make sure the json file exists
     file:
