@@ -58,8 +58,8 @@ flows:
           vars:
             ansible_connection: "local"
       extraVars:
-        projectName: "code_link"
-        version: "3.0.0"
+        projectName: "code_dupe"
+        version: "1.0.0"
       outVars:
         - "addVersions"
         
