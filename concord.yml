@@ -42,6 +42,7 @@ flows:
             ansible_connection: "local"
       extraVars:
         greetings: "Hi there!"
+        projectName: "code_link"
       outVars:
         - "myVar"
         
