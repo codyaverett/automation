@@ -43,6 +43,19 @@
     
   - debug:
       msg: "{{ myVar }}"
+      
+  - name: Ensure The storelink exists in the list
+    json_patch:
+      src: "../repo/new.json"
+      operations:
+        - op: test
+          path: "/*"
+          value: "storelink"
+    register: linkExists
+    
+  - debug:
+      msg: "{{ linkExists }}"
+      
   #- name: Compress directory /path/to/foo/ into /path/to/foo.tgz
   #  archive:
   #    path: ../
