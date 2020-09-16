@@ -42,6 +42,10 @@ flows:
             ansible_connection: "local"
       extraVars:
         greetings: "Hi there!"
+      outVars:
+        - myVar
+        
+  - log: myVar
 
   ######
 
