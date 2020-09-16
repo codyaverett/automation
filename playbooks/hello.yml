@@ -6,4 +6,7 @@
       verbosity: 0
   - shell: "touch ./file.txt"
   - shell: "echo 'omg' > ./file.txt"
+  - file:
+    src: _attachments/whut.json
+    state: touch
   
