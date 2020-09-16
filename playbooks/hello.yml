@@ -4,4 +4,25 @@
   - debug:
       msg: "{{ greetings }}"
       verbosity: 0
-  - shell: "echo 'this is it' > ./repo/file.txt"
+
+  - name: Create a directory if it does not exist
+    file:
+      path: ../repo/
+      state: directory
+      mode: '0755'
+      
+  - name: Touch the same file, but add/remove some permissions
+    file:
+      path: ../repo/whut.txt
+      state: touch
+      mode: u+rw,g-wx,o-rwx
+    
+  - shell: "ls -la ../ >> ../repo/whut.txt"
+  
+  - shell: "cat ../repo/whut.txt"
+    register: myVar
+    
+  - name: Compress directory /path/to/foo/ into /path/to/foo.tgz
+    archive:
+      path: ../
+      dest: ../_attachments/files.tgz

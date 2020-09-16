@@ -1,0 +1,42 @@
+total 36
+drwxr-xr-x  4 concord concord 4096 Sep 16 03:20 .
+drwxr-xr-x 10 concord concord 4096 Sep 16 03:20 ..
+-rw-r--r--  1 concord concord  472 Sep 16 03:20 hello.yml
+-rw-r--r--  1 concord concord  165 Sep 16 03:20 install_nvm.yml
+-rw-r--r--  1 concord concord  522 Sep 16 03:20 install_podman.yml
+-rw-r--r--  1 concord concord   20 Sep 16 03:20 inventory.ini
+drwxr-xr-x  2 concord concord 4096 Sep 16 03:20 library
+drwxr-xr-x  3 concord concord 4096 Sep 16 03:20 roles
+-rw-r--r--  1 concord concord  131 Sep 16 03:20 setup-dev.yml
+total 60
+drwxr-xr-x 10 concord concord 4096 Sep 16 03:23 .
+drwx------  3 concord concord 4096 Sep 16 03:23 ..
+drwxr-xr-x  2 concord concord 4096 Sep 16 03:23 .concord
+drwxr-xr-x  3 concord concord 4096 Sep 16 03:23 .concord_tmp
+drwxr-xr-x  2 concord concord 4096 Sep 16 03:23 .tmp
+drwxr-xr-x  3 concord concord 4096 Sep 16 03:23 _attachments
+-rw-r--r--  1 concord concord   36 Sep 16 03:23 _instanceId
+-rw-r--r--  1 concord concord 1717 Sep 16 03:23 _main.json
+-rw-r--r--  1 concord concord 1515 Sep 16 03:23 concord.yml
+drwxr-xr-x  3 concord concord 4096 Sep 16 03:23 hacking
+drwxr-xr-x  4 concord concord 4096 Sep 16 03:23 playbooks
+drwxr-xr-x  6 concord concord 4096 Sep 16 03:23 repo
+-rwxr-xr-x  1 concord concord   57 Sep 16 03:23 run_ansible.sh
+drwxr-xr-x  2 concord concord 4096 Sep 16 03:23 scripts
+-rw-r--r--  1 concord concord  533 Sep 16 03:23 whut.txt
+total 60
+drwxr-xr-x 10 concord concord 4096 Sep 16 03:27 .
+drwx------  3 concord concord 4096 Sep 16 03:27 ..
+drwxr-xr-x  2 concord concord 4096 Sep 16 03:27 .concord
+drwxr-xr-x  3 concord concord 4096 Sep 16 03:27 .concord_tmp
+drwxr-xr-x  2 concord concord 4096 Sep 16 03:27 .tmp
+drwxr-xr-x  3 concord concord 4096 Sep 16 03:27 _attachments
+-rw-r--r--  1 concord concord   36 Sep 16 03:27 _instanceId
+-rw-r--r--  1 concord concord 1717 Sep 16 03:27 _main.json
+-rw-r--r--  1 concord concord 1515 Sep 16 03:27 concord.yml
+drwxr-xr-x  3 concord concord 4096 Sep 16 03:27 hacking
+drwxr-xr-x  4 concord concord 4096 Sep 16 03:27 playbooks
+drwxr-xr-x  6 concord concord 4096 Sep 16 03:27 repo
+-rwxr-xr-x  1 concord concord   57 Sep 16 03:27 run_ansible.sh
+drwxr-xr-x  2 concord concord 4096 Sep 16 03:27 scripts
+-rw-r--r--  1 concord concord 1397 Sep 16 03:27 whut.txt

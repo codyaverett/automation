@@ -6,6 +6,13 @@ configuration:
 flows:
 
   default:
+  
+  - set:
+       newObj:
+        name: testName
+        type: testType
+  - log: ${resource.writeAsJson(newObj)} 
+  
   - task: git
     in:
       action: clone
@@ -35,6 +42,10 @@ flows:
             ansible_connection: "local"
       extraVars:
         greetings: "Hi there!"
+      outVars:
+        - "myVar"
+        
+  - log: ${myVar}
 
   ######
 
