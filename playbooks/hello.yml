@@ -5,12 +5,18 @@
       msg: "{{ greetings }}"
       verbosity: 0
 
-  #- name: "Create a directory if it does not exist {{ greetings }}"
-  #  file:
-  #    path: ../repo/
-  #    state: directory
-  #    mode: '0755'
-          
+  - name: "Create a directory if it does not exist {{ greetings }}"
+    file:
+      path: ../repo/
+      state: directory
+      mode: '0755'
+  
+  - name: Make sure the json file exists
+    file:
+      path: ../repo/new.json
+      state: touch
+      mode: '0755'
+        
   - name: Add or replace 'baz' member
     json_patch:
       src: "../repo/new.json"
