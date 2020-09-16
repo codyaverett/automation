@@ -12,7 +12,7 @@
       mode: '0755'
       
   - stat:
-      path: ../repo/new.json
+      path: ../repo/projects.json
     register: projectFile
   
   - debug:
@@ -20,20 +20,21 @@
     
   - name: Make sure the json file exists
     file:
-      path: ../repo/new.json
+      path: ../repo/projects.json
       state: touch
       mode: '0755'    
     when: projectFile.stat.exists is false
   
-  - shell: "echo '{}' > ../repo/new.json"
+  - name: Create project file since it does not yet exist
+    shell: "echo '{}' > ../repo/projects.json"
     when: projectFile.stat.exists is false
         
   - name: Test Project exists
     json_patch:
-      src: "../repo/new.json"
+      src: "../repo/projects.json"
       operations:
         - op: add
-          path: "/storelink"
+          path: "/{{ projectname }}"
           value: {
             dev: { current: "" },
             prod: { current: "" },
@@ -44,17 +45,6 @@
   - debug:
       msg: "{{ myVar }}"
       
-  - name: Ensure The storelink exists in the list
-    json_patch:
-      src: "../repo/new.json"
-      operations:
-        - op: test
-          path: "/*"
-          value: "storelink"
-    register: linkExists
-    
-  - debug:
-      msg: "{{ linkExists }}"
       
   #- name: Compress directory /path/to/foo/ into /path/to/foo.tgz
   #  archive:
