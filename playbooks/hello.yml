@@ -18,7 +18,7 @@
   - debug:
       msg: "{{ p }}"
       
-  - shell: "echo "{}" > ../repo/new.json"
+  - shell: "echo '{}' > ../repo/new.json"
     when: projectFile.stat.exists is false
   
   - name: Make sure the json file exists
