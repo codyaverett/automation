@@ -17,25 +17,32 @@
   
   - debug:
       msg: "{{ projectFile }}"
-      
-  - shell: "echo '{}' > ../repo/new.json"
-    when: projectFile.stat.exists is false
-  
+    
   - name: Make sure the json file exists
     file:
       path: ../repo/new.json
       state: touch
-      mode: '0755'
+      mode: '0755'    
+    when: projectFile.stat.exists is false
+  
+  - shell: "echo '{}' > ../repo/new.json"
+    when: projectFile.stat.exists is false
         
-  - name: Add or replace 'baz' member
+  - name: Test Project exists
     json_patch:
       src: "../repo/new.json"
       operations:
         - op: add
-          path: "/baz/-"
-          value: "quz"
+          path: "/storelink"
+          value: {
+            dev: { current: "" },
+            prod: { current: "" },
+            versions: []
+          }
     register: myVar
     
+  - debug:
+      msg: "{{ myVar }}"
   #- name: Compress directory /path/to/foo/ into /path/to/foo.tgz
   #  archive:
   #    path: ../
