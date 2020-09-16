@@ -5,7 +5,7 @@
       msg: "{{ greetings }}"
       verbosity: 0
 
-  - name: Create a directory if it does not exist
+  - name: "Create a directory if it does not exist {{ greetings }}"
     file:
       path: ../repo/
       state: directory
@@ -24,7 +24,7 @@
       src: "../repo/whut.json"
       operations:
         - op: add
-          path: "/baz"
+          path: "/baz/-"
           value: "quz"
     register: myVar
     
