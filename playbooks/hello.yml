@@ -34,7 +34,7 @@
       src: "../repo/projects.json"
       operations:
         - op: add
-          path: "/{{ projectname }}"
+          path: "/{{ projectName }}"
           value: {
             dev: { current: "" },
             prod: { current: "" },
