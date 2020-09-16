@@ -6,6 +6,11 @@
       verbosity: 0
   - shell: "touch ./file.txt"
   - shell: "echo 'omg' > ./file.txt"
+  - name: Create a directory if it does not exist
+    file:
+      path: _attachments/
+      state: directory
+      mode: '0755'
   - name: Touch the same file, but add/remove some permissions
     file:
       path: _attachments/whut.txt
