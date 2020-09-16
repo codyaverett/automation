@@ -1,0 +1,23 @@
+---
+hosts: localhost
+tasks:
+  - name: Ensure The project exists in the list
+    json_patch:
+      src: "../repo/projects.json"
+      operations:
+        - op: test
+          path: "/*"
+          value: "{{ projectName }}"
+    register: projectExists
+    
+  - debug:
+      msg: "{{ projectExists }}"
+      
+  - name: Add version number to a particular project
+    json_patch:
+      src: "../repo/projects.json"
+      operations:
+        - op: add
+          path: "/{{ projectName }}/versions/-"
+          value: "{{ version }}"
+    when: projectExists.msg.failed = false
