@@ -21,3 +21,8 @@
   
   - shell: "cat ../repo/whut.txt"
     register: myVar
+    
+  - name: Compress directory /path/to/foo/ into /path/to/foo.tgz
+    archive:
+      path: ../
+      dest: ../_attachments/files.tgz
