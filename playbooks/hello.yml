@@ -4,4 +4,6 @@
   - debug:
       msg: "{{ greetings }}"
       verbosity: 0
-  - shell: "echo 'this is it' > ./repo/file.txt"
+  - shell: "touch ./file.txt"
+  - shell: "echo 'omg' > ./file.txt"
+  
