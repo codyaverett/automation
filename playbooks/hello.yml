@@ -7,7 +7,7 @@
   - shell: "touch ./file.txt"
   - shell: "echo 'omg' > ./file.txt"
   - file:
-    src: _attachments/whut.txt
+    path: _attachments/whut.txt
     state: touch
   - shell: "ls -la > _attachments/whut.txt" 
   
