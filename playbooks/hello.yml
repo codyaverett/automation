@@ -13,16 +13,22 @@
       
   - name: Touch the same file, but add/remove some permissions
     file:
-      path: ../repo/whut.txt
+      path: ../repo/whut.json
       state: touch
       mode: u+rw,g-wx,o-rwx
     
-  - shell: "ls -la ../ >> ../repo/whut.txt"
-  
-  - shell: "cat ../repo/whut.txt"
+  - shell: "echo '{}' > ../repo/whut.json"
+    
+  - name: Add or replace 'baz' member
+    json_patch:
+      src: "../_attachments/test.json"
+      operations:
+        - op: add
+          path: "/baz"
+          value: "quz"
     register: myVar
     
-  - name: Compress directory /path/to/foo/ into /path/to/foo.tgz
-    archive:
-      path: ../
-      dest: ../_attachments/files.tgz
+  #- name: Compress directory /path/to/foo/ into /path/to/foo.tgz
+  #  archive:
+  #    path: ../
+  #    dest: ../_attachments/files.tgz
