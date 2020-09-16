@@ -46,6 +46,23 @@ flows:
         - "myVar"
         
   - log: ${myVar}
+  
+  - task: ansible
+    in:
+      playbook: playbooks/Projects_AddVersion.yml
+      inventory:
+        local:
+          hosts:
+            - "127.0.0.1"
+          vars:
+            ansible_connection: "local"
+      extraVars:
+        projectName: "code_link"
+        version: "1.0.0"
+      outVars:
+        - "addVersions"
+        
+  - log: ${addVersions}
 
   ######
 
