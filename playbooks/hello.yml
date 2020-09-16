@@ -16,7 +16,7 @@
     register: projectFile
   
   - debug:
-      msg: "{{ p }}"
+      msg: "{{ projectFile }}"
       
   - shell: "echo '{}' > ../repo/new.json"
     when: projectFile.stat.exists is false
