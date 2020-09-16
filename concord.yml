@@ -43,7 +43,7 @@ flows:
       extraVars:
         greetings: "Hi there!"
       outVars:
-        - myVar
+        - "myVar"
         
   - log: myVar
 
