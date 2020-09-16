@@ -4,6 +4,7 @@
     - name: Ensure The project exists in the list
       json_patch:
         src: "../repo/projects.json"
+        pretty: yes
         operations:
           - op: test
             path: "/*"
@@ -16,9 +17,9 @@
     - name: Add version number to a particular project
       json_patch:
         src: "../repo/projects.json"
+        pretty: yes
         operations:
           - op: add
             path: "/{{ projectName }}/versions/-"
             value: "{{ version }}"
-            pretty: yes
       when: projectExists.failed is false
