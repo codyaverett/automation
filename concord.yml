@@ -31,22 +31,22 @@ flows:
 
   ######
 
-  - task: ansible
-    in:
-      playbook: playbooks/hello.yml
-      inventory:
-        local:
-          hosts:
-            - "127.0.0.1"
-          vars:
-            ansible_connection: "local"
-      extraVars:
-        greetings: "Hi there!"
-        projectName: "code_link"
-      outVars:
-        - "myVar"
+ # - task: ansible
+ #   in:
+ #     playbook: playbooks/hello.yml
+ #     inventory:
+ #       local:
+ #         hosts:
+ #           - "127.0.0.1"
+ #         vars:
+ #           ansible_connection: "local"
+ #     extraVars:
+ #       greetings: "Hi there!"
+ #       projectName: "code_link"
+ #     outVars:
+ #       - "myVar"
         
-  - log: ${myVar}
+ # - log: ${myVar}
   
   - task: ansible
     in:
