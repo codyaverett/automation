@@ -21,7 +21,7 @@
     
   - name: Add or replace 'baz' member
     json_patch:
-      src: "../_attachments/test.json"
+      src: "../repo/whut.json"
       operations:
         - op: add
           path: "/baz"
