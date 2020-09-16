@@ -8,3 +8,19 @@ drwxr-xr-x 10 concord concord 4096 Sep 16 03:20 ..
 drwxr-xr-x  2 concord concord 4096 Sep 16 03:20 library
 drwxr-xr-x  3 concord concord 4096 Sep 16 03:20 roles
 -rw-r--r--  1 concord concord  131 Sep 16 03:20 setup-dev.yml
+total 60
+drwxr-xr-x 10 concord concord 4096 Sep 16 03:23 .
+drwx------  3 concord concord 4096 Sep 16 03:23 ..
+drwxr-xr-x  2 concord concord 4096 Sep 16 03:23 .concord
+drwxr-xr-x  3 concord concord 4096 Sep 16 03:23 .concord_tmp
+drwxr-xr-x  2 concord concord 4096 Sep 16 03:23 .tmp
+drwxr-xr-x  3 concord concord 4096 Sep 16 03:23 _attachments
+-rw-r--r--  1 concord concord   36 Sep 16 03:23 _instanceId
+-rw-r--r--  1 concord concord 1717 Sep 16 03:23 _main.json
+-rw-r--r--  1 concord concord 1515 Sep 16 03:23 concord.yml
+drwxr-xr-x  3 concord concord 4096 Sep 16 03:23 hacking
+drwxr-xr-x  4 concord concord 4096 Sep 16 03:23 playbooks
+drwxr-xr-x  6 concord concord 4096 Sep 16 03:23 repo
+-rwxr-xr-x  1 concord concord   57 Sep 16 03:23 run_ansible.sh
+drwxr-xr-x  2 concord concord 4096 Sep 16 03:23 scripts
+-rw-r--r--  1 concord concord  533 Sep 16 03:23 whut.txt
