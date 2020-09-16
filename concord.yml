@@ -45,7 +45,7 @@ flows:
       outVars:
         - "myVar"
         
-  - log: myVar
+  - log: ${myVar}
 
   ######
 
