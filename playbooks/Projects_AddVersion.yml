@@ -1,6 +1,28 @@
 ---
 - hosts: localhost
   tasks:
+  
+    - name: "Create a directory if it does not exist {{ greetings }}"
+      file:
+        path: ../repo/
+        state: directory
+        mode: '0755'
+
+    - stat:
+        path: ../repo/projects.json
+      register: projectFile
+
+    - name: Make sure the json file exists
+      file:
+        path: ../repo/projects.json
+        state: touch
+        mode: '0755'    
+      when: projectFile.stat.exists is false
+
+    - name: Create project file since it does not yet exist
+      shell: "echo '{}' > ../repo/projects.json"
+      when: projectFile.stat.exists is false
+
     - name: Ensure The project exists in the list
       json_patch:
         src: "../repo/projects.json"
@@ -11,8 +33,19 @@
             value: "{{ projectName }}"
       register: projectExists
 
-    - debug:
-        msg: "{{ projectExists }}"
+    - name: "Add {{ projectName }} key to project list"
+      json_patch:
+        src: "../repo/projects.json"
+        pretty: yes
+        operations:
+          - op: add
+            path: "/{{ projectName }}"
+            value: {
+              dev: { current: "" },
+              prod: { current: "" },
+              versions: []
+            }
+      when: projectExists.failed is not true
 
     - name: Add version number to a particular project
       json_patch:
@@ -22,4 +55,4 @@
           - op: add
             path: "/{{ projectName }}/versions/-"
             value: "{{ version }}"
-      when: projectExists.failed is false
+      when: projectExists.failed is not true
